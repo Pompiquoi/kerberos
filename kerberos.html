@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerberos Technology</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kerberos Technology</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="kerberos.html" class="active">Kerberos</a></li>
+                <li><a href="server.html">Server Configuration</a></li>
+                <li><a href="ticket_manager.html">MIT Ticket Manager</a></li>
+                <li><a href="client.html">Client Configuration</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <h2>What is Kerberos?</h2>
+        <p>
+            <strong>Kerberos</strong> is a secure, robust network authentication protocol designed to provide
+            strong authentication for client-server applications. It was developed at the Massachusetts
+            Institute of
+            Technology (MIT)
+            and named after the three-headed dog from Greek mythology, symbolizing its role in guarding the
+            gateway to
+            secure resources.
+        </p>
+
+        <h3>Key Features of Kerberos</h3>
+        <ul>
+            <li><strong>Mutual Authentication:</strong> Ensures that both the client and the server are verified during
+                communication.</li>
+            <li><strong>Ticket-based Authentication:</strong> Replaces passwords with temporary tickets, reducing
+                exposure to sensitive credentials.</li>
+            <li><strong>Centralized Authentication:</strong> Uses a Key Distribution Center (KDC) to manage
+                authentication centrally.
+            </li>
+            <li><strong>Platform Independence:</strong> Works seamlessly across various platforms, such as Linux,
+                Windows, and macOS.
+            </li>
+            <li><strong>Single Sign-On (SSO):</strong> Allows users to authenticate once and access multiple services
+                without re-entering credentials.</li>
+        </ul>
+
+        <h3>How Kerberos Works</h3>
+        <p>
+            Kerberos operates using a ticket-granting mechanism and a trusted third party (the KDC). Here's an overview
+            of the workflow:
+        </p>
+        <ol>
+            <li>
+                <strong>Authentication Request</strong>: The client sends a request to the KDC to authenticate,
+                providing their credentials.
+            </li>
+            <li>
+                <strong>Ticket-Granting Ticket (TGT)</strong>: If the credentials are valid, the KDC sends back a Ticket
+                Granting Ticket (TGT) encrypted with the KDC's secret key.
+            </li>
+            <li>
+                <strong>Service Ticket Request</strong>: The client uses the TGT to request a service ticket for a
+                specific resource.
+            </li>
+            <li>
+                <strong>Service Ticket</strong>: The KDC issues a service ticket, allowing the client to access the
+                requested
+                resource.
+            </li>
+            <li>
+                <strong>Access the Resource</strong>: The client presents the service ticket to the server, which grants
+                access.
+            </li>
+        </ol>
+        <figure>
+            <img src="images/kerberos.webp" alt="Kerberos Workflow">
+        </figure>
+
+        <h3>Benefits of Kerberos</h3>
+        <p>
+            Kerberos offers significant advantages for secure authentication:
+        </p>
+        <ul>
+            <li>Eliminates the need to transmit passwords over the network.</li>
+            <li>Supports modern encryption techniques for secure communication.</li>
+            <li>Scales well in enterprise environments with thousands of users.</li>
+            <li>Ensures compatibility with various operating systems and applications.</li>
+        </ul>
+
+        <h3>Real-World Use Cases</h3>
+        <ul>
+            <li><strong>Enterprise Authentication</strong>: Large organizations use Kerberos for centralized
+                authentication to
+                multiple services like file servers, email systems, and databases.</li>
+            <li><strong>Web Applications</strong>: Kerberos can be integrated with web servers to provide secure
+                authentication for users and applications.(Like on vsb websites)</li>
+            <li><strong>Cloud Services</strong>: Many cloud environments support Kerberos to enable secure user
+                authentication.</li>
+        </ul>
+    </main>
+    <footer>
+        Kerberos Project
+    </footer>
+</body>
+
+</html>

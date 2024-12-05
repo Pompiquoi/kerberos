@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Configuration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kerberos Server Configuration</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="kerberos.html">Kerberos</a></li>
+                <li><a href="server.html" class="active">Server Configuration</a></li>
+                <li><a href="ticket_manager.html">MIT Ticket Manager</a></li>
+                <li><a href="client.html">Client Configuration</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <h2>Setting Up the Kerberos Server</h2>
+        <p>The Kerberos server is configured using MIT Kerberos. Below is an example of the configuration file:</p>
+
+        <p>After installing the Kerberos packages, we can edit the configuration file :</p>
+        <ul>
+            <li>
+                <p>For the <code>/etc/krb5.conf</code> file to configure the domain name:</p>
+                <figure>
+                    <img src="images/server_config1.png" alt="Kerberos Server Configuration">
+                </figure>
+                <figure>
+                    <img src="images/server_config2.png" alt="Kerberos Server Configuration">
+                </figure>
+            </li>
+            <li>
+                <p>And for the <code>/etc/krb5kdc/kdc.conf</code> file with all the parameters for the tickets:</p>
+                <figure>
+                    <img src="images/kdc_config.png" alt="Kerberos Server Configuration">
+                </figure>
+            </li>
+        </ul>
+
+        <p>Then we can create principal for the client so they can get tickets. In this project, we create an user
+            <code>user1</code> that will be used by the windows client.
+        </p>
+
+    </main>
+    <footer>
+        Kerberos Project
+    </footer>
+</body>
+
+</html>

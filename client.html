@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Configuration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kerberos Client Configuration</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="kerberos.html">Kerberos</a></li>
+                <li><a href="server.html">Server Configuration</a></li>
+                <li><a href="ticket_manager.html">MIT Ticket Manager</a></li>
+                <li><a href="client.html" class="active">Client Configuration</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <h2>Configuring the Kerberos Client</h2>
+        <p>
+            Below is a detailed step-by-step configuration that was made to enable Kerberos authentication on the
+            Windows client:
+        </p>
+
+        <h3>1. Installing the Windows Group Policy Editor</h3>
+        <p>
+            The Group Policy Editor allows advanced configuration for Windows settings. On some versions of Windows, it
+            is not installed by default. After downloading it, we can running it with <code>gpedit.msc</code>
+        </p>
+
+
+        <h3>2. Installing the MIT Kerberos Ticket Manager</h3>
+        <p>
+            The MIT Kerberos Ticket Manager is a graphical tool that allows you to view and manage Kerberos tickets on
+            Windows.
+        </p>
+        <li>
+            Download the MIT Kerberos Ticket Manager installer from the official MIT Kerberos website.
+        </li>
+        <li>
+            Run the installer and follow the on-screen instructions to complete the installation.
+        </li>
+        <li>
+            After installation, launch the Ticket Manager to verify that it is working. The interface should display
+            current tickets or prompt for a new ticket request.
+        </li>
+        <figure>
+            <img src="images/ticket_manager.png" alt="MIT Kerberos Ticket Manager Interface">
+        </figure>
+
+        <h3>3. Creating and Configuring the `krb5.ini` File</h3>
+        <p>
+            The `krb5.ini` file contains configuration information for the Kerberos client, including the realm and Key
+            Distribution Center (KDC) details. This file is crucial for enabling the Windows client to communicate with
+            the Kerberos server.
+        </p>
+        <p>
+            Using a text editor and create a new file named <code>krb5.ini</code> with the following
+            configuration. We then save the file in the file of Kerberos ticket manager.
+        </p>
+        <figure>
+            <img src="images/kerbi_ini.png" alt="Example krb5.ini File">
+        </figure>
+
+        <h3>4. Testing the Configuration</h3>
+        <p>
+            After completing the setup, we can use the MIT Kerberos Ticket Manager to request a ticket for the
+            configured
+            realm:
+        </p>
+        <li>Open the Ticket Manager and click "Get Ticket."</li>
+        <li>Enter the credentials of <code>user1</code> for the Kerberos realm.</li>
+        <li>Verify that a valid ticket appears in the manager.</li>
+
+        <figure>
+            <img src="images/get_ticket.png" alt="Requesting a Ticket in MIT Ticket Manager">
+        </figure>
+
+
+    </main>
+    <footer>
+        Kerberos Project
+    </footer>
+</body>
+
+</html>
